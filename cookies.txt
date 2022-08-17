@@ -1,4 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-www.geraldcats.com	TRUE	/	FALSE	1999999999	PHPSESSID	lksf6hh0iqstgejtk76un7qp46
-
