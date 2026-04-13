@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Language" content="zh-Tw">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="浣熊手繪-貼圖,卡片,紅包,手工藝" />
+    <meta property="og:title" content="浣熊手繪-貼圖,卡片,紅包,手工藝" />
+    <meta property="og:description" content="浣熊手繪-貼圖,卡片,紅包,手工藝" />
+    <meta property="og:url" content="index.html" />
+    <meta property="og:image" content="" />
+    <title>浣熊手繪 Wanting Studio</title>
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body class="pageIndex">
+    <div id="page">
+        <header class="header_area">
+            <div class="main_header_area animated">
+                <div class="container">
+                    <nav id="navigation1" class="navigation">
+
+                        <div class="nav-header">
+                            <a class="nav-brand" href="index.html">
+							<img src="images/ws_title.png" alt="浣熊手繪-貼圖,卡片,紅包,手工藝" />
+							<h1>浣熊手繪-貼圖,卡片,紅包,手工藝</h1></a>
+                            <div class="nav-toggle"></div>
+                        </div>
+
+                        <div class="nav-menus-wrapper">
+
+                            <a class="nav-brand-m" href="index.html">
+							<img src="images/ws_title.png" alt="浣熊手繪-貼圖,卡片,手工藝" />
+							</a>
+
+                            <ul class="nav-menu align-to-right">
+                                <li>
+                                    <a href="index.html" target="_self">回首頁</a>
+                                </li>
+                                <li>
+                                    <a href="" target="_self">產品介紹</a>
+                                </li>
+                                <li>
+                                    <a href="" target="_self">訊息分享</a>
+                                    <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="">最新消息</a>
+                                        </li>
+                                        <li>
+                                            <a href="">好評分享</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="" target="_self">聯絡我們</a>
+                                </li>
+
+                                <li class="tp_links">
+                                    <a class="me_tp_call" href="tel:0988-888888 "></a>
+									<a class="me_tp_mail" href="mailto:hikari0329@gmail.com"></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav><!--navigation-->
+                </div>
+            </div>
+        </header>
+        <div class="bannerindex">
+            <div class="swiper-banner">
+                <div class="swiper-wrapper">
+				<!--
+                    <div class="swiper-slide centerBig"><img src="store_image/images/A1166063237781.jpg" /></div>
+					
+					<div class="swiper-slide"><img src="store_image/images/B2166063237826.jpg" /></div>
+					
+					<div class="swiper-slide centerBig"><img src="images/ws_title5.gif"/></div>
+					<!--
+					<div class="swiper-slide centerBig"><img src="images/ws_title.png"/></div>-->
+					<div class="swiper-slide centerBig"><img src="store_image/482541842777505897.jpg"/></div>					
+                </div>
+            </div>
+			
+            <div class="swiper-pagination"></div>
+			
+			<div class="show_content">
+				<a name="prod_cbox"></a>
+				<ul class="products-list clearfix">
+					<li class="item">
+						<figure class="pic">
+							<img src="store_image/481990224407167501.jpg" alt="【示範】產品名稱" />
+						</figure>
+						<div class="name">【示範】產品名稱</div>
+						<div class="name">產品標價</div>
+						<button id='btn_detail' class='btn btn-primary' data-toggle='modal' data-target='#editProductModal'>詳細資料</button>
+						<button id='btn_edit' class='btn btn-warning' data-toggle='modal' data-target='#editProductModal'>編輯資料</button>
+					</li>
+				</ul>
+			</div>
+        </div>
+		
+		<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="editProductModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="editProductModalLabel">編輯產品資料</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body">
+				<form id="editProductForm">
+				  <div class="form-group">
+					<label for="productName">產品名稱</label>
+					<input type="text" class="form-control" id="productName" name="productName">
+				  </div>
+				  <div class="form-group">
+					<label for="productPrice">產品標價</label>
+					<input type="number" class="form-control" id="productPrice" name="productPrice">
+				  </div>
+				  <div class="form-group">
+					<label for="productImages">產品圖片</label>
+					<input type="file" class="form-control-file" id="productImages" name="productImages[]" multiple accept="image/*">
+					<div id="imagePreview"></div>
+				  </div>
+				  <div class="form-group">
+					<label for="productNote">備註</label>
+					<textarea class="form-control" id="productNote" name="productNote" rows="3"></textarea>
+				  </div>
+				</form>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary" id="saveProductBtn">確認</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+        <div class="mobile_wp">
+        </div>
+
+	
+        <div id="content_main">
+
+            <div class="main_part">
+                <div class="show_content fadeInUp animated15">
+
+                    <!-- 以下為編輯器(不含div) -->
+                    <div class="edit">
+                        <!DOCTYPE html>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <script src="js/jquery-1.11.3.min.js"></script>
+                        <!--通用JS 預覽用 不用貼上去編輯器-->
+
+                        <body>
+                            <script src="js/scrollfade.js"></script>
+                            <link rel="preconnect" href="https://fonts.googleapis.com/">
+                            <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+                            <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+                            <div class="hs_box lg_i">
+                                <section class="lg_i_01 d-flex">
+                                    <div class="lg_i_01l">
+                                        <img data-animate-in="left" src="images/lg_img1.png" alt="">
+                                        <!-- 000 -->
+                                        <picture data-animate-in="left">
+                                            <source srcset="images/lg_titi1-3.png" media="(max-width: 584px)" width:344px height:100px />
+                                            <source srcset="images/lg_titi1-2.png" media="(max-width: 1228px)" width:559px height:73px />
+                                            <img src="images/welcome.png" alt="welcome">
+                                        </picture>
+                                    </div>
+                                    <!--  -->
+                                    <img data-animate-in="right" class="lg_i_01r" src="images/lg_img2.png" alt="">
+
+                                </section>
+                            </div>
+                        </body>
+                    </div><!-- edit -->
+                    <!-- 編輯器結束 -->
+
+                </div><!-- show_content -->
+            </div><!-- main_part -->
+        </div><!-- #content_main -->
+
+        <a id="to_top" class="to_top" href="#"><i class='top'></i>TOP</a>
+
+        <!-- ******************************** -->
+        <!-- 有購物車 加上下方 id#bottom_menu -->
+        <ul id="bottom_menu" class="clearfix with_shopping_mode">
+            <li><a href="index.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i>回首頁</a></li>
+            <li><a href="TEL:0988888888"><i class="fa fa-phone fa-2x" aria-hidden="true"></i>電話</a></li>
+        </ul>
+
+        <!-- ******************************** -->
+        <!-- 有購物車 額外加上with_shopping_mode -->
+        <footer class="footer with_shopping_mode">
+            <!-- 有購物車 加上with_shopping_mode -->
+            <div class="center">
+                <div class="footer_info">
+                    <div class="footer_logo">
+                        <a href="index.html"><img src="images/ws_title1.gif"/></a>
+                    </div><!-- footer_logo -->
+                    <ul>
+                        <li>                              
+							<p class="phone">0988-888888</p>						
+							<p class="mail">hikari@gmail.com</p>				
+							<p class="add">○○○○○○○</p>
+                        </li>
+                        <li>
+                            <div class="footer_menu">
+                                <a href="index.html">回首頁</a>
+                                <a href="">訊息分享</a>
+                                <a href="">聯絡我們</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="fix_ri">
+                        <a href="" target="_blank"><img src="images/line.png" /></a><!--line-->
+                        <a href="TEL:0932832994"><img src="images/phone.png" /></a><!--call-->
+                        <a href="" target="_blank"><img src="images/fb.png"></a><!--fb-->
+                    </div>
+                </div><!-- footer_info -->
+
+
+            </div><!-- center -->
+        </footer>
+
+    </div><!-- #page -->
+	
+    <link href="css/normalize.css" rel="stylesheet"/>
+    <link href="css/animate.min.css" rel="stylesheet"/>
+    <link href="css/jquery.bxslider.css" rel="stylesheet"/>
+    <link href="css/menu.css" rel="stylesheet"/>
+    <link href="css/menu_v2_2020.css" rel="stylesheet"/>
+    <link href="css/swiper.min.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/custom.css" rel="stylesheet"/>
+	<link href="../BootsTrap/bootstrap.min.css" rel="stylesheet"/>
+	
+	<script src="js/swiper.min2.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.mmenu.all.js"></script>		
+    <script src='js/main.js'></script>
+    <script src="js/menu_v2_2020.js"></script>
+	<script src="../BootsTrap/bootstrap.min.js"></script>
+
+	<script>
+	  // JavaScript代碼
+	  $(document).ready(function() {
+		// 編輯資料按鈕點擊事件
+		$('.editProductBtn').click(function() {
+		  // 在此處理彈出模態對話框和填充資料的邏輯
+		  $('#editProductModal').modal('show');
+		});
+
+		// 上傳圖片預覽
+		$('#productImages').change(function() {
+		  $('#imagePreview').html('');
+		  if (this.files) {
+			Array.from(this.files).forEach(file => {
+			  const reader = new FileReader();
+			  reader.onload = function(e) {
+				$('#imagePreview').append(`<img src="${e.target.result}" alt="" style="max-width: 100px; max-height: 100px; margin-right: 5px;">`);
+			  }
+			  reader.readAsDataURL(file);
+			});
+		  }
+		});
+
+		// 確認按鈕點擊事件
+		$('#saveProductBtn').click(function() {
+		  // 在此處理提交表單和上傳圖片的邏輯
+		  // 可以使用AJAX發送表單數據到後台PHP文件進行處理
+		});
+	  });
+	  
+	$('#saveProductBtn').click(function() {
+		// 獲取表單數據
+		var productName = $('#productName').val();
+		var productPrice = $('#productPrice').val();
+		var productNote = $('#productNote').val();
+		var formData = new FormData($('#editProductForm')[0]);
+
+		// 使用 AJAX 發送請求
+		$.ajax({
+			type: 'POST',
+			url: 'save_product.php', // 後端 PHP 文件的路徑
+			data: formData, // 表單數據
+			processData: false,
+			contentType: false,
+			success: function(response) {
+				// 請求成功處理的回調函數
+				console.log(response);
+				// 在這裡可以根據後端返回的結果做相應的處理，例如顯示成功消息或重新加載頁面等
+			},
+			error: function(xhr, status, error) {
+				// 請求失敗處理的回調函數
+				console.error(xhr.responseText);
+				// 在這裡可以顯示錯誤消息或者做相應的錯誤處理
+			}
+		});
+	});	  
+	</script>		
+
+	
+	<script>
+		trList = ['leftUp', 'moveRight', 'moveDown', 'centerBig', 'rightDownBig'];
+		var swiper = new Swiper('.swiper-banner', {
+			speed: 1000,
+			autoplay: 4400,
+			autoplayDisableOnInteraction: false,
+			effect: 'fade',
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			onSlideChangeStart: function (swiper) {
+				nextSlide = swiper.slides.eq(swiper.activeIndex);
+				nextSlide.addClass(trList[Math.floor(Math.random() * 5)]);
+			},
+			onSlideChangeEnd: function (swiper) {
+				prevSlide = swiper.slides[swiper.previousIndex];
+				prevSlide.className = "swiper-slide";
+			},
+		});
+	</script>
+</body>
+</html>
